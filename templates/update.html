@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <main class="container p-4">
+        <section class="container">
+            <h1 class="pb-3">Update {{data[0][1]}} details</h1>
+            <form action="/login/update/{{data[0][0]}}" method="post">
+                <div class="form-group">
+                    <label>Website name</label>
+                    <input type="text" class="form-control" name="name" value={{data[0][1]}} />
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="user" value={{data[0][2]}} />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" class="form-control" name="password" value={{data[0][3]}} />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" value="{{data[0][4]}}" />
+                </div>
+                <button class="btn btn-primary" type="submit">Save</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}
